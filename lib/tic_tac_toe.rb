@@ -27,3 +27,16 @@ def valid_move?(board, index)
     return false
   end
 end
+
+def turn(board)
+ puts "Please enter 1-9:"
+ user_input = gets
+ index = input_to_index(user_input)
+ fact = valid_move?(board, index)
+ if fact == true
+  move(board, index)
+  return display_board(board)
+ else
+  turn(board)
+ end
+end
