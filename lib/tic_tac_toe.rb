@@ -12,7 +12,7 @@ def input_to_index(input)
   return user_input
 end
 
-def move(board, index, token)
+def move(board, index, token = "X")
   board[index] = token
 end
 
@@ -36,7 +36,7 @@ def turn(board)
  index = input_to_index(user_input)
  fact = valid_move?(board, index)
  if fact == true
-  move(board, index, token)
+  move(board, index)
   return display_board(board)
  else
   turn(board)
