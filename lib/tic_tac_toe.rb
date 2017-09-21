@@ -28,13 +28,15 @@ def valid_move?(board, index)
   end
 end
 
+
+
 def turn(board)
  puts "Please enter 1-9:"
  user_input = gets
  index = input_to_index(user_input)
  fact = valid_move?(board, index)
  if fact == true
-  move(board, index)
+  move(board, index, token)
   return display_board(board)
  else
   turn(board)
